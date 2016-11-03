@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
+var webpackConfig = require('./webpack.config.js');
 
 // config
 var config = {
@@ -8,18 +9,9 @@ var config = {
   dist: 'dist/',
 };
 
-// gulp.task('js', function() {
-//   return gulp.src(webpackConfig.entry)
-//     .pipe($.webpack(webpackConfig))
-//     .pipe(isProduction ? $.uglify() : $.util.noop())
-//     .pipe(gulp.dest(config.dist))
-//     .pipe($.size({ title : 'js' }))
-//     .pipe($.connect.reload());
-// });
-
-// copy app.js from src to dist
 gulp.task('js', function() {
-  return gulp.src(`${config.src}/app/app.js`)
+  return gulp.src(webpackConfig.entry)
+    .pipe($.webpack(webpackConfig))
     .pipe(gulp.dest(config.dist))
     .pipe($.connect.reload());
 });
@@ -32,7 +24,7 @@ gulp.task('html', function() {
 });
 
 // copy images
-gulp.task('images', function(cb) {
+gulp.task('img', function(cb) {
   return gulp.src(`${config.src}/public/img/**/*.{png,jpg,jpeg,gif}`)
     .pipe(gulp.dest(`${config.dist}/img/`));
 });
@@ -46,7 +38,7 @@ gulp.task('styles',function() {
 });
 
 // waits until is finished then builds the project
-gulp.task('build', ['styles', 'js'], function() {
+gulp.task('build', ['styles', 'js', 'img', 'js'], function() {
   return gulp.src(`${config.src}/index.html`)
     .pipe(gulp.dest(config.dist))
     .pipe($.connect.reload());
