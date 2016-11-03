@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "Dev Environment",
   "version": "0.0.0",
-  "description": "testing gulp",
+  "description": "Dev Environment frame in angular 1.x, webpack, gulp, stylus.",
   "main": "index.html",
   "scripts": {
     "dev": "gulp"
@@ -9,13 +9,21 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
     "gulp-connect": "^5.0.0",
     "gulp-livereload": "^3.8.1",
     "gulp-load-plugins": "^1.4.0",
     "gulp-stylus": "^2.5.0",
     "gulp-util": "^3.0.7",
-    "gulp-watch": "^4.3.10"
+    "gulp-watch": "^4.3.10",
+    "webpack": "^1.13.3",
+    "gulp-webpack": "^1.5.0"
   },
-  "dependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a-void/dev-environment"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "jquery": "^3.1.1"
+  }
 }
