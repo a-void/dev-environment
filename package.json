@@ -4,7 +4,8 @@
   "description": "Dev Environment frame in angular 1.x, webpack, gulp, stylus.",
   "main": "index.html",
   "scripts": {
-    "dev": "gulp"
+    "start": "./node_modules/gulp/bin/gulp.js",
+    "start:prod": "NODE_ENV=production ./node_modules/gulp/bin/gulp.js"
   },
   "license": "MIT",
   "devDependencies": {
