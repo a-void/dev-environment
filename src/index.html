@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Dev Environment</title>
-    <link
-      href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
-      rel='stylesheet'/>
-    <link rel='stylesheet' href='css/app.css'>
-    <script src='bundle.js'></script>
+    <title ng-bind="pageTitle"></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Angular development environment setup">
+    <meta name="keywords" content="Angular webpack stylus babel ES6 ui-router">
   </head>
-
   <body>
+    <div ui-view></div>
   </body>
 </html>
